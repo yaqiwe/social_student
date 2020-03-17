@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/social_base/social_base.iml" filepath="$PROJECT_DIR$/social_base/social_base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/social_common/social_common.iml" filepath="$PROJECT_DIR$/social_common/social_common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/social_qa/social_qa.iml" filepath="$PROJECT_DIR$/social_qa/social_qa.iml" />
+      <module fileurl="file://$PROJECT_DIR$/social_recruit/social_recruit.iml" filepath="$PROJECT_DIR$/social_recruit/social_recruit.iml" />
+      <module fileurl="file://$PROJECT_DIR$/social_student.iml" filepath="$PROJECT_DIR$/social_student.iml" />
+    </modules>
+  </component>
+</project>

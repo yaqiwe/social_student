@@ -1,0 +1,5 @@
+# Project exclude paths
+/social_base/target/
+/social_common/target/
+/social_qa/target/
+/social_recruit/target/
