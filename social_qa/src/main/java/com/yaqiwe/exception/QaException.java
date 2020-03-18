@@ -10,15 +10,15 @@ import lombok.Data;
  * 异常信息类
  */
 @Data
-public class RecruitException extends RuntimeException {
+public class QaException extends RuntimeException {
     private Integer code;
 
-    public RecruitException(StatusCode code) {
+    public QaException(StatusCode code) {
         super(code.getMessage());
         this.code = code.getCode();
     }
 
-    public RecruitException(String message) {
+    public QaException(String message) {
         super(message);
         this.code = StatusCode.ERROR.getCode();
     }

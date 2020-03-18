@@ -15,12 +15,12 @@ import util.ResoultUtil;
  */
 @ControllerAdvice
 @ResponseBody
-public class RecruitExceptionHandler {
+public class QaExceptionHandler {
 
     @ExceptionHandler(Exception.class)
     public Resoult errorHandler(Exception e){
-        if(e instanceof RecruitException){
-            RecruitException baseException = (RecruitException) e;
+        if(e instanceof QaException){
+            QaException baseException = (QaException) e;
             return ResoultUtil.error(baseException.getCode(),baseException.getMessage());
         }else {
             e.printStackTrace();

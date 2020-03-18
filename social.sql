@@ -56,7 +56,7 @@ create DATABASE social_qa
 use social_qa
 
 
-CREATE TABLE rpoblem(
+CREATE TABLE problem(
 id VARCHAR(20) NOT NULL COMMENT '问题Id',
 title VARCHAR(100) NOT NULL COMMENT '问题标题',
 content VARCHAR(500) NOT NULL COMMENT '问题内容',
@@ -73,3 +73,19 @@ reply_time TIMESTAMP NULL COMMENT '最新回复时间',
 PRIMARY KEY (id)
 )COMMENT '问题表'
 
+CREATE TABLE pl(
+problem_id VARCHAR(20) NOT NULL COMMENT '问题ID',
+labl_id VARCHAR(20) NOT NULL COMMENT '标签ID',
+PRIMARY KEY(problem_id,labl_id)
+)COMMENT '问题，标签关系表'
+
+CREATE TABLE reply(
+id VARCHAR(20) NOT NULL COMMENT 'id',
+problem_id VARCHAR(20) NOT NULL COMMENT '问题ID',
+content VARCHAR (500) NOT NULL COMMENT '回复的内容',
+create_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT '回复时间',
+update_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+user_id VARCHAR(20) NOT NULL COMMENT '回复的人的ID',
+nick_name VARCHAR(20) NOT COMMENT '回复人的昵称',
+PRIMARY KEY (id)
+)COMMENT '回复表'

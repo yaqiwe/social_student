@@ -16,6 +16,6 @@ spring:
     time-zone: GMT+8
   #服务名称
   application:
-    name: social-recruit
+    name: social-qa
 server:
   port: 9003
