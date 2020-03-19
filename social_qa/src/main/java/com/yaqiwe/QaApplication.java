@@ -9,6 +9,7 @@ import util.SnowflakeUtil;
  * @Author yaqiwe
  * @Date 2020/3/17 15:48
  * @Version 1.0
+ * 问答微服务
  */
 @SpringBootApplication
 public class QaApplication {

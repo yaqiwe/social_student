@@ -8,6 +8,7 @@
         <module>social_base</module>
         <module>social_recruit</module>
         <module>social_qa</module>
+        <module>social_article</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

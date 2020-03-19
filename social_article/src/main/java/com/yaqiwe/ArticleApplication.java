@@ -7,19 +7,18 @@ import util.SnowflakeUtil;
 
 /**
  * @Author yaqiwe
- * @Date 2020/3/16 19:30
+ * @Date 2020/3/18 16:01
  * @Version 1.0
- * 招聘微服务
+ * 文章微服务
  */
 @SpringBootApplication
-public class RecruitApplication {
-
+public class ArticleApplication {
     public static void main(String[] args) {
-        SpringApplication.run(RecruitApplication.class, args);
+        SpringApplication.run(ArticleApplication.class,args);
     }
 
     @Bean
     public SnowflakeUtil snowflakeUtil(){
-        return new SnowflakeUtil(2,1);
+        return new SnowflakeUtil(4,1);
     }
 }

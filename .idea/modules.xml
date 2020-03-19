@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/social_article/social_article.iml" filepath="$PROJECT_DIR$/social_article/social_article.iml" />
       <module fileurl="file://$PROJECT_DIR$/social_base/social_base.iml" filepath="$PROJECT_DIR$/social_base/social_base.iml" />
       <module fileurl="file://$PROJECT_DIR$/social_common/social_common.iml" filepath="$PROJECT_DIR$/social_common/social_common.iml" />
       <module fileurl="file://$PROJECT_DIR$/social_qa/social_qa.iml" filepath="$PROJECT_DIR$/social_qa/social_qa.iml" />

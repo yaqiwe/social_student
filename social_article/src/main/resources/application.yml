@@ -1,0 +1,24 @@
+spring:
+  #链接数据库配置
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/social_article?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: root
+    password: 123456
+  #数据库校验模式和是否控制台打印sql语句
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+  #返回的时间格式和时区
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  #服务名称
+  application:
+    name: social-article
+  redis:
+    host: localhost
+    port: 6379
+server:
+  port: 9004
