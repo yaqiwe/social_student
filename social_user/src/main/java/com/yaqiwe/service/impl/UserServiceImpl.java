@@ -86,6 +86,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<User> findAll() {
+        checkRoles();
         return userRepository.findAll();
     }
 
@@ -130,11 +131,16 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void deleteById(String userId) {
+        checkRoles();
+        userRepository.deleteById(userId);
+    }
+
+    private void checkRoles(){
+        //校验权限
         String token = (String) request.getAttribute("claims_admin");
         if (token==null){
             throw new UserException("权限不足");
         }
-        userRepository.deleteById(userId);
     }
 
 }

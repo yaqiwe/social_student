@@ -9,6 +9,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import util.SnowflakeUtil;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.Optional;
 
@@ -29,8 +30,12 @@ public class AdminServiceImpl implements AdminService {
     @Autowired
     AdminRepository adminR;
 
+    @Autowired
+    HttpServletRequest request;
+
     @Override
     public void send(Admin admin) {
+        checkRoles();
         if(admin.getLoginname()==null || admin.getLoginname().isEmpty()
             || admin.getPassword()==null || admin.getPassword().isEmpty()){
             throw new UserException("用户名和密码不能为空");
@@ -48,11 +53,13 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     public List<Admin> findAll() {
+        checkRoles();
         return adminR.findAll();
     }
 
     @Override
     public Admin findById(String adminId) {
+        checkRoles();
         Optional<Admin> byId = adminR.findById(adminId);
         if(byId.isPresent()){
             return byId.get();
@@ -62,6 +69,7 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     public void update(Admin admin) {
+        checkRoles();
         adminR.save(admin);
     }
 
@@ -80,5 +88,13 @@ public class AdminServiceImpl implements AdminService {
             }
         }
         throw new UserException("用户名或密码错误");
+    }
+
+    private void checkRoles(){
+        //校验管理员权限
+        String token = (String) request.getAttribute("claims_admin");
+        if (token==null){
+            throw new UserException("权限不足");
+        }
     }
 }

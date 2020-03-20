@@ -23,31 +23,31 @@ public class JwtInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        return getInfoInToken(request);
-    }
-
-    public boolean getInfoInToken(HttpServletRequest request){
         String hander=request.getHeader("Authorization");
-        if(hander!=null && !hander.isEmpty()){
-            if (hander.startsWith("Bearer ")){
-                String token=hander.substring(7);
-                try {
-                    Claims claims = jwtUtil.parseJWT(token);
-                    request.setAttribute("userId",(String) claims.getId());
-                    request.setAttribute("userName",(String) claims.getSubject());
-                    String roles=(String) claims.get("roles");
-                    if(roles!=null && roles.equals("admin")){
-                        request.setAttribute("claims_admin",roles);
-                    }
-                    if(roles!=null && roles.equals("user")){
-                        request.setAttribute("claims_user",roles);
-                    }
-                }catch (Exception e){
-                    throw new UserException("令牌不正确");
+        if(hander==null || hander.isEmpty()){
+            //未找到token
+            throw new UserException("请先登录");
+        }else if(! hander.startsWith("Bearer ")){
+            //token 不符合规则
+            throw new UserException("令牌不正确");
+        }else {
+            String token=hander.substring(7);
+            try {
+                Claims claims = jwtUtil.parseJWT(token);
+                request.setAttribute("userId",(String) claims.getId());
+                request.setAttribute("userName",(String) claims.getSubject());
+                String roles=(String) claims.get("roles");
+                if(roles!=null && roles.equals("admin")){
+                    request.setAttribute("claims_admin",roles);
                 }
+                if(roles!=null && roles.equals("user")){
+                    request.setAttribute("claims_user",roles);
+                }
+                return true;
+            }catch (Exception e){
+                throw new UserException("登录过期请重新登录");
             }
         }
-        return true;
     }
 
 }
