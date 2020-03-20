@@ -1,0 +1,15 @@
+spring:
+  rabbitmq:
+    password: guest
+    username: guest
+    host: localhost
+    port: 5672
+server:
+  port: 9009
+
+aliyun:
+  sms:
+    AccessKeyID: LTAI4FhUpzsgtNxFjWc4CoDM
+    AccessKeySecret: AS4FaHSoBuc1TT721sDOOOa8WChT7X
+    TemplateCode: SMS_186575090
+    SignName: socialStudet
