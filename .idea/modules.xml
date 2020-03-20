@@ -5,9 +5,12 @@
       <module fileurl="file://$PROJECT_DIR$/social_article/social_article.iml" filepath="$PROJECT_DIR$/social_article/social_article.iml" />
       <module fileurl="file://$PROJECT_DIR$/social_base/social_base.iml" filepath="$PROJECT_DIR$/social_base/social_base.iml" />
       <module fileurl="file://$PROJECT_DIR$/social_common/social_common.iml" filepath="$PROJECT_DIR$/social_common/social_common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/social_gathering/social_gathering.iml" filepath="$PROJECT_DIR$/social_gathering/social_gathering.iml" />
       <module fileurl="file://$PROJECT_DIR$/social_qa/social_qa.iml" filepath="$PROJECT_DIR$/social_qa/social_qa.iml" />
       <module fileurl="file://$PROJECT_DIR$/social_recruit/social_recruit.iml" filepath="$PROJECT_DIR$/social_recruit/social_recruit.iml" />
       <module fileurl="file://$PROJECT_DIR$/social_student.iml" filepath="$PROJECT_DIR$/social_student.iml" />
+      <module fileurl="file://$PROJECT_DIR$/social_user/social_user.iml" filepath="$PROJECT_DIR$/social_user/social_user.iml" />
+      <module fileurl="file://$PROJECT_DIR$/social_verification/social_verification.iml" filepath="$PROJECT_DIR$/social_verification/social_verification.iml" />
     </modules>
   </component>
 </project>

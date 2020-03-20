@@ -9,6 +9,9 @@
         <module>social_recruit</module>
         <module>social_qa</module>
         <module>social_article</module>
+        <module>social_gathering</module>
+        <module>social_user</module>
+        <module>social_verification</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

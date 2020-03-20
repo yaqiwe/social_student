@@ -100,7 +100,7 @@ CREATE TABLE article(
 	user_id VARCHAR (20) not NULL COMMENT '用户ID',
 	title VARCHAR(100) not NULL COMMENT '文章标题',
 	content VARCHAR(2000) not NULL COMMENT '文章内容',
-	iamge VARCHAR(100) not null COMMENT '文章封面',
+	iamge VARCHAR(300) not null COMMENT '文章封面',
 	create_time TIMESTAMP not NULL DEFAULT CURRENT_TIMESTAMP COMMENT '发布时间',
 	update_time TIMESTAMP not NULL DEFAULT CURRENT_TIMESTAMP on UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
 	is_public VARCHAR(1) not NULL DEFAULT 1 COMMENT '是否公开0:不公开,1:公开',
@@ -110,7 +110,46 @@ CREATE TABLE article(
 	comment BIGINT NOT NULL COMMENT '评论数',
 	state VARCHAR(1) NOT NULL DEFAULT 0 COMMENT '审核状态0:未审核,1:已审核',
 	channel_id BIGINT NOT NULL COMMENT '所属频道ID',
-	url VARCHAR(100) NULL COMMENT 'url地址',
+	url VARCHAR(300) NULL COMMENT 'url地址',
 	type VARCHAR(1) NOT NULL COMMENT '文章类型0:分享,1专栏',
 	PRIMARY KEY (id)
 )COMMENT '文章'
+
+CREATE DATABASE social_user
+
+use social_user
+
+CREATE TABLE `admin` (
+  `id` varchar(20) NOT NULL COMMENT 'ID',
+  `loginname` varchar(100) DEFAULT NULL COMMENT '登陆名称',
+  `password` varchar(100) DEFAULT NULL COMMENT '密码',
+  `state` varchar(1) DEFAULT NULL COMMENT '状态',
+  PRIMARY KEY (`id`)
+) COMMENT='管理员';
+
+CREATE TABLE `follow` (
+  `userid` varchar(20) NOT NULL COMMENT '用户ID',
+  `targetuser` varchar(20) NOT NULL COMMENT '被关注用户ID',
+  PRIMARY KEY (`userid`,`targetuser`)
+) ;
+
+
+CREATE TABLE `user` (
+  `id` varchar(20) NOT NULL COMMENT 'ID',
+  `mobile` varchar(100) DEFAULT NULL COMMENT '手机号码',
+  `password` varchar(100) DEFAULT NULL COMMENT '密码',
+  `nickname` varchar(100) DEFAULT NULL COMMENT '昵称',
+  `sex` varchar(2) DEFAULT NULL COMMENT '性别',
+  `birthday` TIMESTAMP DEFAULT NULL COMMENT '出生年月日',
+  `avatar` varchar(100) DEFAULT NULL COMMENT '头像',
+  `email` varchar(100) DEFAULT NULL COMMENT 'E-Mail',
+  `regdate` TIMESTAMP DEFAULT NULL COMMENT '注册日期',
+  `updatedate` TIMESTAMP DEFAULT NULL COMMENT '修改日期',
+  `lastdate` TIMESTAMP DEFAULT NULL COMMENT '最后登陆日期',
+  `online` bigint(20) DEFAULT NULL COMMENT '在线时长（分钟）',
+  `interest` varchar(100) DEFAULT NULL COMMENT '兴趣',
+  `personality` varchar(100) DEFAULT NULL COMMENT '个性',
+  `fanscount` int(20) DEFAULT NULL COMMENT '粉丝数',
+  `followcount` int(20) DEFAULT NULL COMMENT '关注数',
+  PRIMARY KEY (`id`)
+)COMMENT='用户';

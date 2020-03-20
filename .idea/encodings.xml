@@ -4,7 +4,10 @@
     <file url="file://$PROJECT_DIR$/social_article/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/social_base/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/social_common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/social_gathering/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/social_qa/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/social_recruit/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/social_user/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/social_verification/src/main/java" charset="UTF-8" />
   </component>
 </project>

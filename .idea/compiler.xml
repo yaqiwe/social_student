@@ -7,20 +7,27 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="social_recruit" />
-        <module name="social_qa" />
         <module name="test" />
-        <module name="social_article" />
+        <module name="social_qa" />
         <module name="social_base" />
+        <module name="social_gathering" />
+        <module name="social_verification" />
         <module name="social_common" />
+        <module name="social_article" />
+        <module name="social_user" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="social_article" target="1.8" />
       <module name="social_base" target="1.8" />
       <module name="social_common" target="1.8" />
+      <module name="social_gathering" target="1.8" />
       <module name="social_qa" target="1.8" />
+      <module name="social_rabbitmq" target="1.8" />
       <module name="social_recruit" target="1.8" />
       <module name="social_student" target="1.8" />
+      <module name="social_user" target="1.8" />
+      <module name="social_verification" target="1.8" />
       <module name="test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
@@ -29,9 +36,13 @@
       <module name="social_article" options="-parameters" />
       <module name="social_base" options="-parameters" />
       <module name="social_common" options="-parameters" />
+      <module name="social_gathering" options="-parameters" />
       <module name="social_qa" options="-parameters" />
+      <module name="social_rabbitmq" options="-parameters" />
       <module name="social_recruit" options="-parameters" />
       <module name="social_student" options="-parameters" />
+      <module name="social_user" options="-parameters" />
+      <module name="social_verification" options="-parameters" />
       <module name="test" options="-parameters" />
     </option>
   </component>
